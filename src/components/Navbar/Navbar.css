@@ -1,0 +1,60 @@
+.navBar {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1e2127;
+}
+.flexEmp {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+.flexLinks {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+}
+.navLogo {
+  height: 60px;
+ 
+}
+.navLogo:hover{
+    animation: spin infinite 2s linear;
+}
+.text-dark {
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 0;
+  text-decoration: none;
+}
+.btn{
+    all: unset;
+    padding: .5rem;
+    margin: 0 .2rem;
+    color: #1e2127;
+    font-weight: bold;
+    background-color: #61dafb;
+    transition: all .3s;
+}
+.btn:hover {
+    cursor: pointer;
+    
+    background-color:#26c3ee ;
+}.btn:focus{
+    transform: scale(105%);
+    color: white;
+}
+@keyframes spin {
+    0%{
+transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(359deg);
+            }
+
+    }
