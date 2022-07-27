@@ -1,8 +1,16 @@
-.title{
-    font-weight: bold;
-    font-size: 2.5rem;
-    background-color: #61dafb;
-    padding: 1rem;
-    color: white;
-    box-shadow: #1e2127 0px 0px 5px;
+.title {
+  font-weight: bold;
+  font-size: 2.5rem;
+  background-color: #61dafb;
+  padding: 1rem;
+  color: white;
+  box-shadow: #1e2127 0px 0px 5px;
+}
+.itemListContainer {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: #10141d;
 }
