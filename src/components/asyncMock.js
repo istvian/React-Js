@@ -36,3 +36,11 @@ export const getProducts = () => {
     }, 2000);
   });
 };
+export const getProduct = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(products[0]);
+      //reject("Fallo al consultar al servidor");
+    }, 2000);
+  });
+};
