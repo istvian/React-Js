@@ -12,7 +12,7 @@ $ npm start
 ### `npm start`
 Clona el repositorio a tu carpeta local
 ### `npm install`
-Npm buscara las dependecias necesarias en el archivo package.json y las instalara
+Npm buscara las dependencias necesarias en el archivo package.json y las instalara
 ### `npm start`
 Inicia el servidor en el navegador
 
