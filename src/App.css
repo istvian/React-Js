@@ -1,6 +1,20 @@
+:root{
+  --color-nav-bg:#1e2127;
+  --color-nav-text:#ffffff;
+  --color-nav-btn:#fff241;
+  --color-nav-btn-hover:#9b9654;
+  --color-bg:#101214;
+  --color-one:#355c7d;
+  --color-border:#ffcc41;
+  --color-tree:#c06c84;
+  --color-four:#f67280;
+  --color-five:#f8b195;
+}
+
 .App {
   text-align: center;
-  /* background-color: #282c34; */
+  background-color: var(--color-bg);
+  min-height: 100vh;
 }
 
 .App-logo {

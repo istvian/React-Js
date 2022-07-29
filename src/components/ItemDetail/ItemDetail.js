@@ -1,24 +1,19 @@
 import React from "react";
+import "./ItemDetail.css";
+import { useState } from "react";
 
-const ItemDetail = ({ product }) => {
-  const handleClick = (description) => {
-    console.log(description);
-  };
+const ItemDetail = ({ detail }) => {
   return (
     <div className="itemListContainer">
-      <li key={product.key} className="productCard">
-        <img alt={product.name} className="productImg" src={product.img}></img>
-        <div className="productHeader">
-          <span className="productName">{product.name}</span>
-          <span className="productPrice">{product.price}</span>
-        </div>
-        <p className="productDetail">{product.description}</p>
-        <p className="productCat">{product.category}</p>
-        <button onClick={(e) => handleClick(e)}>
-          Ver detalle del producto
-        </button>
-        <p className="productStock">{product.stock}</p>
-      </li>
+      <p className="detail__title">Detalle</p>
+      <div className="detail">
+        <img alt={detail.name} className="detail__img" src={detail.img}></img>
+        <span className="detail__name">{detail.name}</span>
+        <span className="detail__price">{detail.price}</span>
+        <p className="detail__detail">{detail.description}</p>
+        <p className="detail__cat">{detail.category}</p>
+        <p className="detail__stock">{detail.stock}</p>
+      </div>
     </div>
   );
 };

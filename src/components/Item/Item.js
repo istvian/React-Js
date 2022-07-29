@@ -1,5 +1,6 @@
 import React from "react";
 import "./Item.css";
+import { Link } from "react-router-dom";
 
 const Item = ({ products }) => {
   const handleClick = (description) => {
@@ -7,16 +8,15 @@ const Item = ({ products }) => {
   };
 
   return products.map((product) => (
-    <li key={product.key} className="productCard">
-      <img alt={product.name} className="productImg" src={product.img}></img>
-      <div className="productHeader">
-        <span className="productName">{product.name}</span>
-        <span className="productPrice">{product.price}</span>
+    <li key={product.id} className="product">
+      <img alt={product.name} className="product__img" src={product.img}></img>
+      <div className="product__header">
+        <span className="product__name">{product.name}</span>
+        <span className="product__price">{product.price}</span>
       </div>
-      <p className="productDetail">{product.description}</p>
-      <p className="productCat">{product.category}</p>
-      <button onClick={(e) => handleClick(e)}>Ver detalle del producto</button>
-      <p className="productStock">{product.stock}</p>
+      <p className="product__cat">{product.category}</p>
+      <Link className="product__btn" to={`/detail/${product.id}`}>Ver detalle</Link>
+      <p className="product__stock">{product.stock}</p>
     </li>
   ));
 };
