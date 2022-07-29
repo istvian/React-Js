@@ -5,6 +5,7 @@
   align-content: center;
   justify-items: center;
   transition: all .3s;
+  padding: 1rem;
 }
 .cart__img {
   height: 50px;
@@ -20,8 +21,8 @@
   position: absolute;
   text-align: center;
   left: 5px;
-  top: -2px;
-  color: white;
+  top: 15px;
+  color: var(--color-bg)
 }
 @media screen and (max-width: 500px) {
   .cart {
@@ -36,6 +37,6 @@
     text-align: center;
     left: 5px;
     top: 22px;
-    color: white;
+    color: var(--color-bg)
   }
 }

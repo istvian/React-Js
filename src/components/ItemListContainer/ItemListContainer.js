@@ -22,7 +22,6 @@ const ItemListContainer = (props) => {
         })
         .finally((response) => {
           setLoading(false);
-          console.log(loading);
         });
     } else {
       getProducts()
@@ -34,7 +33,6 @@ const ItemListContainer = (props) => {
         })
         .finally((response) => {
           setLoading(false);
-          console.log(loading);
         });
     }
   }, [params.categoryId]);

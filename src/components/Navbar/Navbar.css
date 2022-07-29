@@ -44,6 +44,7 @@
 }
 .nav__btn:focus {
   transform: scale(105%);
+  background-color: var(--color-nav-btn-hover);
   color: white;
 }
 @media screen and (max-width: 500px) {
