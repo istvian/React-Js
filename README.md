@@ -5,12 +5,15 @@
 En una nueva carpeta ejecuta los siguientes codigos
 ```
 $ git clone https://github.com/istvian/React-Js.git
+$ cd .\React-Js\
 $ npm install
 $ npm start
 ```
 
 ### `npm start`
 Clona el repositorio a tu carpeta local
+### `cd .\React-Js\`
+Ingresa a la carpeta del proyecto
 ### `npm install`
 Npm buscara las dependencias necesarias en el archivo package.json y las instalara
 ### `npm start`
@@ -32,6 +35,9 @@ Cree los siguientes componentes:
 
 ## Navegación
 La navegación del sitio web se realizó con `react-router-dom` el cual facilita el trabajo y genera una mejor experiencia de usuario al cambiar la url y generar historial.
+
+## Link hacia el gif
+[Imgur](https://imgur.com/vbiHNqL)
 
 ## Sobre el proyecto
 
