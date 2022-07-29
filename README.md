@@ -10,6 +10,8 @@ $ npm install
 $ npm start
 ```
 
+O abre la app en este [link]https://react-js-six-phi.vercel.app/
+
 ### `npm start`
 Clona el repositorio a tu carpeta local
 ### `cd .\React-Js\`
