@@ -4,7 +4,7 @@
   list-style: none;
   display: grid;
   max-width: 600px;
-  grid-template-areas: "img img name name" "img img detail detail" "img img cat cat" "img img price price" "img img stock stock";
+  grid-template-areas: "img img name name" "img img detail detail" "img img cat cat" "img img price price" "img img stock stock" "img img counter counter";
   background-color: #1e2127;
   grid-template-columns: 1fr 1fr 1fr;
   margin: 1rem 1rem;
@@ -74,10 +74,13 @@
   align-self: flex-start;
   justify-self: center;
 }
+.detail__counter{
+  grid-area: counter;
+}
 
 @media screen and (max-width: 500px) {
   .detail {
-    grid-template-areas: "img img" "name name" "price price" "detail detail" "stock stock" "cat cat";
+    grid-template-areas: "img img" "name name" "price price" "detail detail" "stock stock" "counter counter" "cat cat";
     grid-template-columns: 1fr 1fr;
   }
 }
