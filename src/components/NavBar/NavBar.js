@@ -1,5 +1,4 @@
 import "./NavBar.css";
-import logo from "./nantiki.png";
 import CartWidget from "../CartWidget/CartWidget";
 import { Link } from "react-router-dom";
 
@@ -8,7 +7,7 @@ const NavBar = () => {
     <nav className="nav">
       <div className="nav__container">
         <Link to="/">
-          <img className="nav__logo" alt="Logo de la empresa" src={logo} />
+          <img className="nav__logo" alt="Logo de la empresa" src="/nantiki.png" />
         </Link>
       </div>
       <div className="nav__links">

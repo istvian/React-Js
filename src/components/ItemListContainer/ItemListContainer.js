@@ -1,5 +1,4 @@
 import "./ItemListContainer.css";
-// import ItemCount from "../ItemCount/ItemCount";
 import ItemList from "../ItemList/ItemList";
 import { getProducts, getProductsByCategory } from "../asyncMock";
 import { useEffect, useState } from "react";
@@ -42,13 +41,9 @@ const ItemListContainer = (props) => {
       <div className="itemListContainer">
         <p className="itemListContainer__title">{props.greeting}</p>
         <ItemList products={products} />
-        {/* <ItemCount stock={10} initial={1} onAdd={AddItem} /> */}
       </div>
     );
   }
-  // const AddItem = (quantity) => {
-  //   alert(`Se han agregado ${quantity} Item al carrito`);
-  // };
   return (
     <div>
       <p className="itemListContainer__title">Cargando {params.categoryId}...</p>

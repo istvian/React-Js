@@ -10,6 +10,15 @@
   --color-four:#f67280;
   --color-five:#f8b195;
 }
+html{
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: fit-content;
+  overflow-x: hidden;
+  overflow-anchor: none;
+  scroll-behavior: smooth;
+}
 
 .App {
   text-align: center;
@@ -17,5 +26,13 @@
   min-height: 100vh;
   display: flex;
   flex-flow: column nowrap;
+  box-sizing: border-box;
+}
+
+.no_selection {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -ms-user-select: none;
 }
 
