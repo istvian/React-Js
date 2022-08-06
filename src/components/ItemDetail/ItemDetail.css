@@ -76,6 +76,27 @@
 }
 .detail__counter{
   grid-area: counter;
+  padding: 1rem;
+}
+.detail__btn {
+  all: unset;
+  padding: 0.5rem;
+  margin: 1rem;
+  font-weight: bold;
+  background-color: var(--color-nav-btn);
+  transition: all 0.3s;
+  border-radius: 5px;
+  color: var(--color-bg);
+}
+.detail__btn:hover {
+  cursor: pointer;
+  background-color: var(--color-nav-btn-hover);
+  color: var(--color-nav-text);
+}
+.detail__btn:focus {
+  transform: scale(105%);
+  background-color: var(--color-nav-btn-hover);
+  color: white;
 }
 
 @media screen and (max-width: 500px) {

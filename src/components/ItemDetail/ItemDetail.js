@@ -1,10 +1,14 @@
 import React from "react";
 import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const ItemDetail = ({ detail }) => {
-  const AddItem = (quantity) => {
-    alert(`Se han agregado ${quantity} ${detail.name} al carrito`);
+  const [quantity, setQuantity] = useState(0);
+
+  const onAdd = (quantity) => {
+    setQuantity(quantity);
   };
   return (
     <div className="itemListContainer">
@@ -17,12 +21,14 @@ const ItemDetail = ({ detail }) => {
         <p className="detail__cat">{detail.category}</p>
         <p className="detail__stock">{detail.stock}</p>
         <div className="detail__counter">
-          <ItemCount
+          {quantity > 0 ? 
+            <Link className="detail__btn" to="/cart">Ir al carrito</Link> :<ItemCount
             className="detail__counter"
             initial={0}
-            onAdd={AddItem}
+            onAdd={onAdd}
             stock={detail.stock}
           />
+          }
         </div>
       </div>
     </div>
