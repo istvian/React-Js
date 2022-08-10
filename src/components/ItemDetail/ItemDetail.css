@@ -3,7 +3,7 @@
   text-decoration: none;
   list-style: none;
   display: grid;
-  max-width: 600px;
+  max-width: 800px;
   grid-template-areas: "img img name name" "img img detail detail" "img img cat cat" "img img price price" "img img stock stock" "img img counter counter";
   background-color: #1e2127;
   grid-template-columns: 1fr 1fr 1fr;
@@ -77,6 +77,9 @@
 .detail__counter{
   grid-area: counter;
   padding: 1rem;
+  width: 100%;
+  justify-self: center;
+  align-self: flex-start;
 }
 .detail__btn {
   all: unset;

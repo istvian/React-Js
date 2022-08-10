@@ -7,6 +7,16 @@
   transition: all .3s;
   padding: 1rem;
 }
+.cart-disabled{
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: center;
+  justify-items: center;
+  transition: all .3s;
+  padding: 1rem;
+  filter: grayscale();
+}
 .cart__img {
   height: 50px;
 }

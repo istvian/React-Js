@@ -90,7 +90,7 @@ const products = [
     description: "Consola PlayStation 5",
   },
 ];
-const timeout = 1000;
+const timeout = 100;
 
 export const getProducts = () => {
   return new Promise((resolve, reject) => {

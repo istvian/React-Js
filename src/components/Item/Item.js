@@ -3,9 +3,6 @@ import "./Item.css";
 import { Link } from "react-router-dom";
 
 const Item = ({ products }) => {
-  const handleClick = (description) => {
-    console.log(description);
-  };
 
   return products.map((product) => (
     <li key={product.id} className="product">
