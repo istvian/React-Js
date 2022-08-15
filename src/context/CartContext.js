@@ -39,7 +39,7 @@ export const CartContextProvider = ({ children }) => {
     cart.forEach(element => {
         acc+= Number(element.price) * Number(element.quantity);
     });
-    return `${acc}.000`;
+    return `${acc.toLocaleString('es-CL')}`;
   };
 
   const getQuantity = () =>{
@@ -53,8 +53,6 @@ export const CartContextProvider = ({ children }) => {
     const product = cart.find((prod) => prod.id === id);
     return product?.quantity;
   };
-
-  console.log(cart);
 
   return (
     <CartContext.Provider value={{ cart, addItem, getQuantity, getProductQuantity, removeItem, getTotal }}>

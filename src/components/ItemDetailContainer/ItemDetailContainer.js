@@ -1,25 +1,34 @@
 import React from "react";
-import { getProductByID } from "../asyncMock";
+// import { getProductByID } from "../asyncMock";
 import { useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
+import { getDoc, doc } from "firebase/firestore";
+import { db } from "../../services/firebase";
 
 const ItemDetailContainer = () => {
   const [loading, setLoading] = useState(true);
   const [product, setProduct] = useState();
-  const params = useParams();
-
+  const { productId } = useParams();
 
   useEffect(() => {
-    getProductByID(params.productId)
-      .then((res) => {
-        setProduct(res);
-        setLoading(false);
+    setLoading(true);
+    getDoc(doc(db, "products", productId))
+      .then((response) => {
+        const values = response.data();
+        const product = {
+          id: response.id,
+          ...values,
+        };
+        setProduct(product);
       })
-      .catch((res) => {
-        console.log("Ocurrio un error");
+      .catch((error) => {
+        console.log(error);
+      })
+      .finally(() => {
+        setLoading(false);
       });
-  }, [params]);
+  }, [productId]);
 
   if (!loading) {
     return (
@@ -28,9 +37,11 @@ const ItemDetailContainer = () => {
       </div>
     );
   }
-  return <div>
-    <p className="detail__title">Cargando detalles...</p>
-  </div>;
+  return (
+    <div>
+      <p className="detail__title">Cargando detalles...</p>
+    </div>
+  );
 };
 
 export default ItemDetailContainer;

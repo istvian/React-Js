@@ -23,14 +23,14 @@ const Cart = () => {
       {cart.map((item) => {
         return (
           <div key={item.id} className="content__item">
-            <Link to={`/detail/${item.id}`}>
+            <Link className="content__link" to={`/detail/${item.id}`}>
               <img className="content__img" src={item.img} />
             </Link>
             <Link to={`/detail/${item.id}`} className="content__name">
               {item.name}
             </Link>
-            <p className="content__text">{item.price}</p>
-            <p className="content__text">{item.quantity}</p>
+            <p className="content__price">{item.price.toLocaleString('es-CL')}</p>
+            <p className="content__stock">{item.quantity}</p>
             <button className="content__btn" onClick={() => Remove(item.id)}>
               Quitar
             </button>

@@ -6,7 +6,6 @@ const ItemCount = ({ stock=0, initial=1, onAdd }) => {
   const add = (num) => {
     setCount(count + num);
   };
-
   return (
     <div className="counter">
       <div className="counter__selectors">

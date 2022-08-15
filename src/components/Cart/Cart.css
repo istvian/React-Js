@@ -1,89 +1,152 @@
-.cart__content{
-    display: flex;
-    flex-flow: column nowrap;
-    background-color: var(--color-nav-bg);
-    margin: 1rem;
-    max-width: 700px;
-    align-items: center;
-    align-self: center;
-    justify-self: center;
+.cart__content {
+  display: flex;
+  flex-flow: column nowrap;
+  background-color: var(--color-nav-bg);
+  margin: 1rem;
+  max-width: 700px;
+  align-items: center;
+  align-self: center;
+  justify-self: center;
+  width: 100%;
+  padding: 0.5rem 1rem;
+}
+.cart__title {
+  color: white;
+  padding: 0.5rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.content__img {
+  width: 100px;
+  align-self: center;
+  justify-self: start;
+  object-fit: cover;
+  transition: all 0.3s;
+}
+.content__img:hover {
+  border: var(--color-border) solid 1px;
+}
+.content__item {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 1rem;
+  background-color: rgb(23, 25, 26);
+  transition: all 0.3s;
+}
+.content__item:hover {
+  background-color: rgb(40, 44, 46);
+}
+.content__text {
+  color: white;
+  padding: 1rem;
+  font-weight: bold;
+}
+.content__stock {
+  color: white;
+  padding: 1rem;
+  font-weight: bold;
+}
+.content__price {
+  color: white;
+  padding: 1rem;
+  font-weight: bold;
+}
+.content__price::before {
+  content: "$";
+}
+.content__btn {
+  all: unset;
+  padding: 0.5rem;
+  margin: 0.2rem 0.3rem;
+  font-weight: bold;
+  background-color: var(--color-nav-btn);
+  transition: all 0.3s;
+  border-radius: 5px;
+  color: var(--color-bg);
+}
+.content__btn:hover {
+  cursor: pointer;
+  background-color: var(--color-nav-btn-hover);
+  color: var(--color-nav-text);
+}
+.content__btn:focus {
+  transform: scale(105%);
+  background-color: var(--color-nav-btn-hover);
+  color: white;
+}
+.content__btn:disabled {
+  background-color: #444;
+}
+.content__name {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+.content__name:hover {
+  text-decoration: none;
+  color: var(--color-nav-btn);
+  font-weight: bold;
+}
+.content__total {
+  color: white;
+  padding: 1rem;
+  font-weight: bold;
+  align-self: flex-end;
+}
+.content__total::before {
+  content: "Total: $";
+}
+@media (max-width: 500px) {
+  .content__img {
     width: 100%;
-    padding: .5rem 1rem;
-}
-.cart__title{
-    color: white;
-    padding: .5rem;
-    font-weight: bold;
-    font-size: 1.5rem;
-}
-.content__img{
-    width: 100px;
-    align-self:center;
-    justify-self: start;
+    height: 150px;
     object-fit: cover;
     transition: all 0.3s;
-}
-.content__img:hover{
-    border: var(--color-border) solid 1px;
-}
-.content__item{
-    height: 100px;
+    align-self: center;
+    justify-self: center;
+  }
+  .content__link{
     width: 100%;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-    align-items: center;
+    grid-area: img;
+    align-self: center;
+    justify-self: center;
+  }
+  .content__item {
+    height: fit-content;
+    width: 90%;
+    display: grid;
+    grid-template-areas: "img img" "stock name" "price price" "btn btn";
+    grid-auto-flow: column;
     margin: 1rem;
     background-color: rgb(23, 25, 26);
     transition: all 0.3s;
+    padding: 1rem 0;
+    justify-content: center;
+    align-items: center;
+  }
+  .content__price {
+    grid-area: price;
+    margin: 0;
+    padding: .5rem;
+  }
+  .content__stock {
+    grid-area: stock;
+    margin: 0;
+    padding: .5rem;
+  }
+  .content__stock::after {
+    content: " x";
+  }
+  .content__name {
+    grid-area: name;
+    margin: 0;
+    padding: .5rem;
+  }
+  .content__btn {
+    grid-area: btn;
+  }
 }
-.content__item:hover{
-    background-color: rgb(40, 44, 46);
-}
-.content__text{
-    color: white;
-    padding: 1rem;
-    font-weight: bold;
-}
-.content__btn {
-    all: unset;
-    padding: 0.5rem;
-    margin: 0.2rem 0.3rem;
-    font-weight: bold;
-    background-color: var(--color-nav-btn);
-    transition: all 0.3s;
-    border-radius: 5px;
-    color: var(--color-bg);
-  }
-  .content__btn:hover {
-    cursor: pointer;
-    background-color: var(--color-nav-btn-hover);
-    color: var(--color-nav-text);
-  }
-  .content__btn:focus {
-    transform: scale(105%);
-    background-color: var(--color-nav-btn-hover);
-    color: white;
-  }
-  .content__btn:disabled{
-    background-color: #444;
-  }
-  .content__name{
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-  }
-  .content__name:hover{
-    text-decoration: none;
-    color: var(--color-nav-btn);
-    font-weight: bold;
-  }
-  .content__total{
-    color: white;
-    padding: 1rem;
-    font-weight: bold;
-    align-self: flex-end;
-  }
-  .content__total::before{
-    content: "Total: $";
-  }
