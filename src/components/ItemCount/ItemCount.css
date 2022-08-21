@@ -6,7 +6,7 @@
 
 .counter__btn {
     all: unset;
-    padding: 0.5rem;
+    padding: .5rem 1.5rem;
     margin: 0.2rem 0.3rem;
     font-weight: bold;
     background-color: var(--color-nav-btn);

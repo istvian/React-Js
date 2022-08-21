@@ -26,6 +26,19 @@
   padding: 1rem 0;
   text-align: center;
 }
+.detail__text{
+  padding: 1rem;
+  color: white;
+  text-align: start;
+  font-weight: bold;
+  font-size: 0.9rem;
+  align-self: center;
+  justify-self: center;
+  grid-area: stock;
+}
+.detail__gray{
+  border: #777 1px solid;
+}
 .detail__price {
   grid-area: price;
   font-size: 1.5rem;

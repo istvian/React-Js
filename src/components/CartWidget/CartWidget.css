@@ -4,49 +4,47 @@
   flex-flow: column nowrap;
   align-content: center;
   justify-items: center;
-  transition: all .3s;
+  transition: all 0.3s;
   padding: 1rem;
 }
-.cart-disabled{
+.cart-disabled {
   position: relative;
   display: flex;
   flex-flow: column nowrap;
   align-content: center;
   justify-items: center;
-  transition: all .3s;
+  transition: all 0.3s;
   padding: 1rem;
   filter: grayscale();
 }
 .cart__img {
   height: 50px;
 }
-.cart:hover{
+.cart:hover {
   transform: scale(95%);
 }
 .cart__counter {
   height: 100%;
   width: 100%;
   font-weight: bold;
-  font-size: .8rem;
+  font-size: 0.8rem;
   position: absolute;
   text-align: center;
   left: 5px;
   top: 15px;
-  color: var(--color-bg)
+  color: var(--color-bg);
 }
 @media screen and (max-width: 500px) {
-  .cart {
-    padding: 1.5rem 0 0 0;
-  }
   .cart__counter {
     height: 100%;
     width: 100%;
     font-weight: bold;
-    font-size: .8rem;
+    font-size: 0.8rem;
     position: absolute;
     text-align: center;
+    text-overflow: clip;
     left: 5px;
-    top: 22px;
-    color: var(--color-bg)
+    top: 16px;
+    color: var(--color-bg);
   }
 }

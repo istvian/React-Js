@@ -12,13 +12,28 @@ const ItemDetail = ({ id, name, img, price, description, category, stock }) => {
     setQuantity(quantity);
     addItem({ name, price, id, quantity, img });
   };
+  if (stock == 0) {
+    return (
+      <div className="itemListContainer">
+        <p className="detail__title">Detalle</p>
+        <div className="detail ">
+          <img alt={name} className="detail__img" src={img}></img>
+          <span className="detail__name">{name}</span>
+          <span className="detail__price">{price.toLocaleString("es-CL")}</span>
+          <p className="detail__detail">{description}</p>
+          <p className="detail__cat">{category}</p>
+          <p className="detail__text"> Producto sin stock</p>
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="itemListContainer">
       <p className="detail__title">Detalle</p>
       <div className="detail">
         <img alt={name} className="detail__img" src={img}></img>
         <span className="detail__name">{name}</span>
-        <span className="detail__price">{price.toLocaleString('es-CL')}</span>
+        <span className="detail__price">{price.toLocaleString("es-CL")}</span>
         <p className="detail__detail">{description}</p>
         <p className="detail__cat">{category}</p>
         <p className="detail__stock">{stock}</p>

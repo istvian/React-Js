@@ -9,7 +9,7 @@ const Cart = () => {
   const Remove = (id) => {
     removeItem(id);
   };
-  if (cart.length == 0) {
+  if (cart.length === 0) {
     return (
       <div className="cart__content">
         <p className="content__text">No hay items en el carrito</p>
@@ -24,12 +24,14 @@ const Cart = () => {
         return (
           <div key={item.id} className="content__item">
             <Link className="content__link" to={`/detail/${item.id}`}>
-              <img className="content__img" src={item.img} />
+              <img alt={item.name} className="content__img" src={item.img} />
             </Link>
             <Link to={`/detail/${item.id}`} className="content__name">
               {item.name}
             </Link>
-            <p className="content__price">{item.price.toLocaleString('es-CL')}</p>
+            <p className="content__price">
+              {item.price.toLocaleString("es-CL")}
+            </p>
             <p className="content__stock">{item.quantity}</p>
             <button className="content__btn" onClick={() => Remove(item.id)}>
               Quitar
@@ -38,9 +40,9 @@ const Cart = () => {
         );
       })}
       <p className="content__total">{getTotal()}</p>
-      <Link className="detail__btn" to="/cart">
-             Terminar mi compra
-            </Link>
+      <Link className="detail__btn" to="/checkout">
+        Terminar mi compra
+      </Link>
     </div>
   );
 };
