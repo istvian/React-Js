@@ -37,6 +37,8 @@ Cree los siguientes componentes:
 
 ## Navegación
 La navegación del sitio web se realizó con `react-router-dom` el cual facilita el trabajo y genera una mejor experiencia de usuario al cambiar la url y generar historial.
+
+
 ![2022-08-20 21-25-19](https://user-images.githubusercontent.com/76795576/185771587-96c8f2da-4f9c-4624-9c2a-018702949e2f.gif)
 
 ![WhatsApp Video 2022-08-20 at 9 29 17 PM](https://user-images.githubusercontent.com/76795576/185771621-86f4cc96-3a3f-444f-b63a-f3c4c394b623.gif)
