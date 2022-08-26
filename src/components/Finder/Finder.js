@@ -1,8 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import { doc, getDoc } from "firebase/firestore";
 import "./Finder.css";
-import { db } from "../../services/firebase";
+import { findOrderById } from "../../services/firebase/firestore";
 
 const Finder = () => {
   const [order, setOrder] = useState("");
@@ -12,12 +11,9 @@ const Finder = () => {
   const search = async (e) => {
     try {
       e.preventDefault();
-      const orderRef = doc(db, "orders", order);
-      const response = await getDoc(orderRef);
-      if (response.data()) {
-        setOrderData(response.data());
-        setLoaded(true);
-      }
+      const response = await findOrderById(order);
+      setOrderData(response);
+      setLoaded(true);
     } catch (error) {
       console.log(error);
     }

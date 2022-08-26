@@ -3,17 +3,9 @@ import { useContext, useState } from "react";
 import "./Checkout.css";
 import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
-import {
-  collection,
-  addDoc,
-  Timestamp,
-  writeBatch,
-  where,
-  query,
-  getDocs,
-  documentId,
-} from "firebase/firestore";
+import { collection, Timestamp, writeBatch } from "firebase/firestore";
 import { db } from "../../services/firebase";
+import { addOrder, checkCart } from "../../services/firebase/firestore";
 
 const Checkout = () => {
   const [status, setStatus] = useState(0);
@@ -30,6 +22,7 @@ const Checkout = () => {
     removeItem(id);
   };
 
+  // Vista si hay stock
   if (status === 1) {
     return (
       <div>
@@ -43,6 +36,7 @@ const Checkout = () => {
       </div>
     );
   }
+  // Vista si ocurrio un error
   if (status === 2) {
     return (
       <div>
@@ -102,13 +96,13 @@ const Checkout = () => {
         total,
       };
 
+      // Chequea si los elementos estan disponibles
       const ids = cart.map((e) => e.id);
       const productRef = collection(db, "products");
-      const prodOnFirestore = await getDocs(
-        query(productRef, where(documentId(), "in", ids))
-      );
+      const prodOnFirestore = await checkCart(productRef, ids);
 
       const { docs } = prodOnFirestore;
+
       const outOfStock = [];
       const batch = writeBatch(db);
 
@@ -126,7 +120,7 @@ const Checkout = () => {
       });
       if (outOfStock.length === 0) {
         const orderRef = collection(db, "orders");
-        const orderAdded = await addDoc(orderRef, order);
+        const orderAdded = await addOrder(orderRef, order);
         batch.commit();
 
         clearCart();
@@ -140,6 +134,7 @@ const Checkout = () => {
       console.log(error);
     }
   };
+  // Valida los inputs
   const validate = () => {
     if (name.length <= 0) {
       alert("El nombre no debe quedar en blanco");
@@ -155,7 +150,7 @@ const Checkout = () => {
     }
     return true;
   };
-
+  // Vista predeterminada
   return (
     <div className="form__container">
       <p className="detail__title">Checkout</p>

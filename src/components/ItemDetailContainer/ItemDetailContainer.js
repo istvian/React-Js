@@ -1,38 +1,24 @@
 import React from "react";
-import { useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
-import { getDoc, doc } from "firebase/firestore";
-import { db } from "../../services/firebase";
+import { getDocbyID } from "../../services/firebase/firestore";
+import { useAsync } from "../../hooks/useAsync";
+import { fetcher } from "../../utils/fetcher";
 
 const ItemDetailContainer = () => {
-  const [loading, setLoading] = useState(true);
-  const [product, setProduct] = useState();
   const { productId } = useParams();
 
-  useEffect(() => {
-    setLoading(true);
-    getDoc(doc(db, "products", productId))
-      .then((response) => {
-        const values = response.data();
-        const product = {
-          id: response.id,
-          ...values,
-        };
-        setProduct(product);
-      })
-      .catch((error) => {
-        console.log(error);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  }, [productId]);
+  const { isLoading, data, error } = useAsync(fetcher(getDocbyID, productId), [
+    productId,
+  ]);
 
-  if (!loading) {
+  if (!isLoading) {
+    if (error) {
+      return <h1>Ocurrio un error</h1>;
+    }
     return (
       <div>
-        <ItemDetail {...product} />
+        <ItemDetail {...data} />
       </div>
     );
   }

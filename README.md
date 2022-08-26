@@ -12,7 +12,7 @@ $ npm start
 
 O abre la app en este [link](https://react-js-six-phi.vercel.app/)
 
-### `npm start`
+### `git clone https://github.com/istvian/React-Js.git`
 Clona el repositorio a tu carpeta local
 ### `cd .\React-Js\`
 Ingresa a la carpeta del proyecto

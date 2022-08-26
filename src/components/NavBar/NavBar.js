@@ -1,28 +1,16 @@
 import "./NavBar.css";
 import CartWidget from "../CartWidget/CartWidget";
 import { Link } from "react-router-dom";
-import { getDocs, collection } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { db } from "../../services/firebase";
+import { getCategory } from "../../services/firebase/firestore";
 
 const NavBar = () => {
-  const [catData, setCatData] = useState([]);
+  const [category, setCategory] = useState([]);
   useEffect(() => {
-    getCat();
+    getCategory().then((categories) => {
+      setCategory(categories);
+    });
   }, []);
-  const getCat = async () => {
-    try {
-      const catRef = collection(db, "categories");
-      const response = await getDocs(catRef);
-      const categories = [];
-      response.docs.forEach((element) => {
-        categories.push(element.data().description);
-      });
-      setCatData(categories);
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   return (
     <nav className="nav">
@@ -36,7 +24,7 @@ const NavBar = () => {
         </Link>
       </div>
       <div className="nav__links">
-        {catData.map((cat) => (
+        {category.map((cat) => (
           <Link
             key={cat}
             className="nav__btn"
